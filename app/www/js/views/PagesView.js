@@ -1,36 +1,24 @@
 var PagesView = Backbone.View.extend({
-
-/*
-	render: function() {
-		this.$el.html(templates["pages_default"]());
-	},
-
-	initialize: function(options) {
-		this.options = options;
-	}
-*/
-
 /*
 	events: {
-		"click tbody": "pageTransaction"
+		"click tbody": "showSpecificPage"
 	},
-	template: templates["pages"],
-	render: function() {
-		this.$el.html(this.template({
-			pages: this.collection // this.pages.toJSON();
-		}));
-	},
-	initialize: function(options) {
-		this.options = options;
-	},
-	pageTransaction: function(e) {
+
+	showSpecificPage: function(e) {
+		console.log("button clicked");
+
 		if (e.target instanceof HTMLButtonElement) {
-			console.dir($(e.target).attr("data-model-id"));
-			console.log("handle page fired!");
-			console.dir($(e.target).closest("tr"));
+			console.log($(e.target).attr("data-model-id"));
+			console.log("show specific page fired!");
+			var myPage = new Page({id: $(e.target).attr("data-model-id")});
+			myPage.fetch({
+			success: function() {
+				that.$el.html(templates["add_page"]({ pages: that.collection.toJSON() }))
+			}
+		});
 		}
-	}
-	*/
+	},*/
+
 
 	render: function() {
 		var that = this;

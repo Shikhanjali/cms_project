@@ -22,9 +22,7 @@ var ContactAddView = Backbone.View.extend({
     c.save(null, {
       success: function() {
         console.dir(c.attributes);
-
-            appRouter.navigate("/contacts", { trigger: true });
-
+        appRouter.navigate("/contacts", { trigger: true });
       }
     });
 

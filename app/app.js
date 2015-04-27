@@ -27,11 +27,32 @@ module.exports = function(config) {
 	});
 
   // serve all static files regardless
-	app.use("/js", express.static(config.httpServer.jsRoot));
+	/*app.use("/js", express.static(config.httpServer.jsRoot));
 	app.use("/libs", express.static(config.httpServer.libsRoot));
 	app.use("/css", express.static(config.httpServer.cssRoot));
 	app.use("/i", express.static(config.httpServer.imageRoot));
-	app.use("/media", express.static(config.httpServer.mediaRoot));
+	app.use("/media", express.static(config.httpServer.mediaRoot));*/
+  app.use("/js", express.static(config.httpServer.jsRoot, {
+		setHeaders: function(res, filePath) {
+			if (/.gz.js$/.test(filePath)) {
+				res.setHeader("Content-Encoding", "gzip")
+			}
+		}
+	}));
+
+	// no longer needed because uglify is combining the lib files with the app files
+	app.use("/libs", express.static(config.httpServer.libsRoot));
+
+	app.use("/css", express.static(config.httpServer.cssRoot, {
+		setHeaders: function(res, filePath) {
+			if (/.gz.css$/.test(filePath)) {
+				res.setHeader("Content-Encoding", "gzip")
+			}
+		}
+	}));
+
+	app.use("/i", express.static(config.httpServer.imageRoot));
+  app.use("/media", express.static(config.httpServer.mediaRoot));
 
   app.set("json replacer", function(key, value) {
       if (key === "__v") {
