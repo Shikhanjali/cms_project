@@ -16312,12 +16312,17 @@ this["templates"]["donations"] = Handlebars.template({
       name: "creditCard",
       hash: {},
       data: data
-    }) : helper)) + "</td></tr>";
+    }) : helper)) + '</td><td><button class="btn btn-danger" id="delete-donation" data-model-id="' + alias3((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias1, 
+    typeof helper === alias2 ? helper.call(depth0, {
+      name: "_id",
+      hash: {},
+      data: data
+    }) : helper)) + '">Delete</button></td></tr>';
   },
   compiler: [ 6, ">= 2.0.0-beta.1" ],
   main: function(depth0, helpers, partials, data) {
     var stack1;
-    return '<table class="table table-bordered"><h3>List of Donations</h3><thead><tr><th>Name</th><th>Date of Payment</th><th>Amount</th><th>Credit Card</th></tr></thead><tbody>' + ((stack1 = helpers.each.call(depth0, depth0 != null ? depth0.donations : depth0, {
+    return '<table class="table table-bordered"><h3>List of Donations</h3><thead><tr><th>Name</th><th>Date of Payment</th><th>Amount</th><th>Credit Card</th><th>Actions</th></tr></thead><tbody>' + ((stack1 = helpers.each.call(depth0, depth0 != null ? depth0.donations : depth0, {
       name: "each",
       hash: {},
       fn: this.program(1, data, 0),
@@ -16686,6 +16691,17 @@ var DonationAddView = Backbone.View.extend({
 });
 
 var DonationsView = Backbone.View.extend({
+  events: {
+    "click #delete-donation": "deleteDonation"
+  },
+  deleteDonation: function(e) {
+    console.log("delete donation button clicked " + $(e.target).attr("data-model-id"));
+    var targetModelId = $(e.target).attr("data-model-id"), targetModel;
+    targetModel = this.collection.get(targetModelId);
+    this.collection.remove(targetModel);
+    targetModel.destroy();
+    console.log("Donation deleted, refresh the page");
+  },
   render: function() {
     var that = this;
     this.collection.fetch({
