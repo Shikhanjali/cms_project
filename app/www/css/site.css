@@ -1,3 +1,133 @@
 #main-content {
-  margin-top: 80px;
-}
+  margin-top: 80px; }
+
+/*
+	Name: animate-setup
+	Description: Setups up the animation key frames for the named animation.
+	Parameters:
+	  $animation-name
+	  @content
+	Compatibility: Provides browser specific style for webkit.
+*/
+/*
+	Name: animate-me
+	Description: Assigns and configures the named animation to an element.
+	Parameters:
+	  $animation-name
+		$animation-duration
+		$animation-timing-function
+		$animation-delay
+		$animation-fill-mode
+		$animation-iteration-count
+		$animation-direction
+		$animation-play-state
+	Compatibility: Provides browser specific style for webkit.
+*/
+/*
+	Name: transition
+	Description: Applies a single/multiple transition to an element in a cross browser manner.
+	Parameters:
+	  $transition
+	Compatibility: Provides browser specific style for webkit.
+*/
+/*
+	Name: transition-prop
+	Description: Applies a single transition to an element in a cross browser manner.
+	Parameters:
+	  $transition-property
+	  $transition-duration
+	  $transition-delay
+	  $transition-timing-function
+	Compatibility: Provides browser specific style for webkit.
+*/
+/*
+	Name: transition-props
+	Description: Applies a single/multiple transition to an element in a cross browser manner.
+	Parameters:
+	  $transition-property
+	  $transition-duration
+	  $transition-delay
+	  $transition-timing-function
+	Compatibility: Provides browser specific style for webkit.
+*/
+/*
+	Name: transform
+	Description: Applies a transform to an element in a cross browser manner.
+	Parameters:
+	  $transform
+		$transform-origin
+	Compatibility: Provides browser specific style for webkit.
+*/
+@keyframes blue-to-red {
+  from {
+    background-color: blue; }
+
+  to {
+    background-color: red; } }
+@-webkit-keyframes blue-to-red {
+  from {
+    background-color: blue; }
+
+  to {
+    background-color: red; } }
+#donation-create-button {
+  animation-name: blue-to-red;
+  animation-duration: 8s;
+  animation-timing-function: ease;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-play-state: running;
+  animation-fill-mode: none;
+  -webkit-animation-name: blue-to-red;
+  -webkit-animation-duration: 8s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: none; }
+
+@keyframes box-rotate {
+  to {
+    background-color: blue;
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+    -ms-transform-origin: 0px 60px 0;
+    /* IE 9 */
+    -webkit-transform-origin: 0px 60px 0;
+    /* Chrome, Safari, Opera */
+    transform-origin: 0px 60px 0; } }
+@-webkit-keyframes box-rotate {
+  to {
+    background-color: blue;
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+    -ms-transform-origin: 0px 60px 0;
+    /* IE 9 */
+    -webkit-transform-origin: 0px 60px 0;
+    /* Chrome, Safari, Opera */
+    transform-origin: 0px 60px 0; } }
+#contact-create-button {
+  animation-name: box-rotate;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-play-state: running;
+  animation-fill-mode: none;
+  -webkit-animation-name: box-rotate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: none; }

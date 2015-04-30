@@ -16,5 +16,6 @@ var Page = BaseModel.extend({
       console.log("title in my model changed.");
     });
     */
+    console.log("pages ..");
   }
 });

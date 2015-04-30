@@ -56,16 +56,16 @@ module.exports = function(grunt) {
         ext: ".min.hbs"
 	    }
 		},
-    /*sass: {
+    sass: {
 			main: {
         options: {
-          sourcemap: "none"
+          //sourcemap: "none"
         },
 				files: {
 					"app/www/css/site.css": "app/sass/site.scss"
 				}
 			}
-		},*/
+		},
 		cssmin: {
 			main: {
         options: {
@@ -98,6 +98,7 @@ module.exports = function(grunt) {
             "app/www/libs/bootstrap/dist/js/bootstrap.js",
             "app/www/libs/underscore/underscore.js",
             "app/www/libs/backbone/backbone.js",
+            "app/www/libs/backbone.stickit/backbone.stickit.js",
             "app/www/libs/handlebars/handlebars.js",
             "app/www/libs/localforage/dist/localforage.js",
             'app/www/js/templates.js',
@@ -160,7 +161,8 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: ["app/www/js/**/*.js", "!app/www/js/*.min.js"],
-				tasks: ["uglify","compress:js"]
+				//tasks: ["uglify:combine","compress:js"]
+        tasks: ["uglify","compress:js"]
 			}
 		}
   });
@@ -193,15 +195,12 @@ module.exports = function(grunt) {
   });
 
   //grunt.registerTask("default", ["webServer"]);
-  //grunt.registerTask("default", ["htmlmin","handlebars","webServer","watch"]);
-  /*grunt.registerTask("default", [
-    "sass","cssmin","htmlmin","handlebars",
-    "uglify","compress","web-server","watch"
-  ]);*/
+  grunt.registerTask("default", ["htmlmin","handlebars","webServer","watch"]);
 
-  grunt.registerTask("default", [
-    "cssmin", "htmlmin", "handlebars",
+
+  /*grunt.registerTask("default", [
+    "sass", "cssmin", "htmlmin", "handlebars",
     "uglify", "compress", "webServer","watch"
-  ]);
+  ]);*/
 
 };

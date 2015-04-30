@@ -132,7 +132,6 @@ module.exports = function(config) {
   app.use("/api", require("./router/donations.js")(config, mongoose));
   app.use("/api", require("./router/contacts.js")(config, mongoose));
   app.use("/api", require("./router/galleries.js")(config, mongoose));
-  // disable authentication
   app.use("/account", require("./router/accounts.js")(config, mongoose));
 
   app.use(express.static(config.httpServer.wwwRoot));

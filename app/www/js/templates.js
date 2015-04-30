@@ -5,7 +5,25 @@ this["templates"]["add_contact"] = Handlebars.template({"compiler":[6,">= 2.0.0-
 },"useData":true});
 
 this["templates"]["add_donation"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<div class=\"container\"><div class=\"row\"><div class=\"col-md-6\"><h3>Every penny helps, thank you!</h3><br><form><div class=\"form-group\"><label for=\"name\">Name on Card</label><input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Bill Gates\"></div><div class=\"form-group\"><label class=\"sr-only\" for=\"amount\">Amount (in dollars)</label><div class=\"input-group\"><div class=\"input-group-addon\">$</div><input type=\"text\" class=\"form-control\" id=\"amount\" placeholder=\"Amount\"><div class=\"input-group-addon\">.00</div></div></div><div class=\"form-group\"><label for=\"paymentMethod\">Payment Method</label><select class=\"form-control\" id=\"paymentMethod\"><option>Mastercard</option><option>Visa</option><option>American Express</option></select></div><div class=\"form-group\"><label for=\"creditCardNumber\">Credit Card Number</label><input type=\"text\" class=\"form-control\" id=\"creditCardNumber\" placeholder=\"XXXX-XXXX-XXXX-XXXX\"></div><div class=\"form-group\"><label for=\"dateOfExpiry\">Expires</label><input type=\"text\" class=\"form-control\" id=\"dateOfExpiry\" placeholder=\"MM/YY\"></div><div class=\"form-group\"><label for=\"cvv\">Security code</label><input type=\"text\" class=\"form-control\" id=\"cvv\" placeholder=\"XXX - last 3 digits on the back of your card\"></div><div class=\"form-group\"><label for=\"addres\">Address</label><input type=\"text\" class=\"form-control\" id=\"address\" placeholder=\"111 Some St, Sunnyvale, CA 94086\"></div><div class=\"form-group\"><label for=\"comments\">Comments</label><textarea class=\"form-control\" rows=\"3\" id=\"comments\"></textarea></div><button type=\"button\" class=\"btn btn-primary\" id=\"donation-create-button\">Submit Donation</button></form></div></div></div>";
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
+
+  return "<div class=\"container\"><div class=\"row\"><div class=\"col-md-6\"><h3>Every penny helps, thank you!</h3><br><form><div class=\"form-group\"><label for=\"name\">Name on Card</label><input type=\"text\" class=\"form-control\" id=\"name\" value=\""
+    + alias3(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"name","hash":{},"data":data}) : helper)))
+    + "\"></div><div class=\"form-group\"><label class=\"sr-only\" for=\"amount\">Amount (in dollars)</label><div class=\"input-group\"><div class=\"input-group-addon\">$</div><input type=\"text\" class=\"form-control\" id=\"amount\" value=\""
+    + alias3(((helper = (helper = helpers.amount || (depth0 != null ? depth0.amount : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"amount","hash":{},"data":data}) : helper)))
+    + "\"><div class=\"input-group-addon\">.00</div></div></div><div class=\"form-group\"><label for=\"paymentMethod\">Payment Method</label><select class=\"form-control\" id=\"paymentMethod\" value=\""
+    + alias3(((helper = (helper = helpers.amount || (depth0 != null ? depth0.amount : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"amount","hash":{},"data":data}) : helper)))
+    + "\"><option>Mastercard</option><option>Visa</option><option>American Express</option></select></div><div class=\"form-group\"><label for=\"creditCardNumber\">Credit Card Number</label><input type=\"text\" class=\"form-control\" id=\"creditCardNumber\" value=\""
+    + alias3(((helper = (helper = helpers.creditCardNumber || (depth0 != null ? depth0.creditCardNumber : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"creditCardNumber","hash":{},"data":data}) : helper)))
+    + "\" placeholder=\"XXXX-XXXX-XXXX-XXXX\"></div><div class=\"form-group\"><label for=\"dateOfExpiry\">Expires</label><input type=\"text\" class=\"form-control\" id=\"dateOfExpiry\" value=\""
+    + alias3(((helper = (helper = helpers.dateOfExpiry || (depth0 != null ? depth0.dateOfExpiry : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"dateOfExpiry","hash":{},"data":data}) : helper)))
+    + "\" placeholder=\"MM/YY\"></div><div class=\"form-group\"><label for=\"cvv\">Security code</label><input type=\"text\" class=\"form-control\" id=\"cvv\" value=\""
+    + alias3(((helper = (helper = helpers.cvv || (depth0 != null ? depth0.cvv : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"cvv","hash":{},"data":data}) : helper)))
+    + "\" placeholder=\"XXX - last 3 digits on the back of your card\"></div><div class=\"form-group\"><label for=\"addres\">Address</label><input type=\"text\" class=\"form-control\" id=\"address\" value=\""
+    + alias3(((helper = (helper = helpers.address || (depth0 != null ? depth0.address : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"address","hash":{},"data":data}) : helper)))
+    + "\" placeholder=\"111 Some St, Sunnyvale, CA 94086\"></div><div class=\"form-group\"><label for=\"comments\">Comments</label><textarea class=\"form-control\" rows=\"3\" value=\""
+    + alias3(((helper = (helper = helpers.comments || (depth0 != null ? depth0.comments : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"comments","hash":{},"data":data}) : helper)))
+    + "\" id=\"comments\"></textarea></div><button type=\"button\" class=\"btn btn-primary\" id=\"donation-create-button\">Submit Donation</button></form></div></div></div>";
 },"useData":true});
 
 this["templates"]["add_page"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -63,15 +81,33 @@ this["templates"]["donations"] = Handlebars.template({"1":function(depth0,helper
     + alias3(((helper = (helper = helpers.amount || (depth0 != null ? depth0.amount : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"amount","hash":{},"data":data}) : helper)))
     + "</td><td>"
     + alias3(((helper = (helper = helpers.creditCard || (depth0 != null ? depth0.creditCard : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"creditCard","hash":{},"data":data}) : helper)))
-    + "</td><td><button class=\"btn btn-danger\" id=\"delete-donation\" data-model-id=\""
+    + "</td><td><button class=\"btn btn-primary\" id=\"edit-donation\" data-model-id=\""
+    + alias3(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"_id","hash":{},"data":data}) : helper)))
+    + "\">Edit</button> <button class=\"btn btn-danger\" id=\"delete-donation\" data-model-id=\""
     + alias3(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"_id","hash":{},"data":data}) : helper)))
     + "\">Delete</button></td></tr>";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "<table class=\"table table-bordered\"><h3>List of Donations</h3><thead><tr><th>Name</th><th>Date of Payment</th><th>Amount</th><th>Credit Card</th><th>Actions</th></tr></thead><tbody>"
+  return "<table class=\"table table-bordered\"><h3>List of Donations</h3><thead><tr><th>Name</th><th>Date of Payment</th><th>Amount</th><th>Credit Card</th><th class=\"col-md-2\">Actions</th></tr></thead><tbody>"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.donations : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "</tbody></table>";
+},"useData":true});
+
+this["templates"]["edit_donation"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
+
+  return "<div class=\"container\"><div class=\"row\"><div class=\"col-md-6\"><h3>Every penny helps, thank you!</h3><br><form><div class=\"form-group\"><label for=\"name\">Name on Card</label><input type=\"text\" class=\"form-control\" id=\"name\" value=\""
+    + alias3(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"name","hash":{},"data":data}) : helper)))
+    + "\"></div><div class=\"form-group\"><label class=\"sr-only\" for=\"amount\">Amount (in dollars)</label><div class=\"input-group\"><div class=\"input-group-addon\">$</div><input type=\"text\" class=\"form-control\" id=\"amount\" value=\""
+    + alias3(((helper = (helper = helpers.amount || (depth0 != null ? depth0.amount : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"amount","hash":{},"data":data}) : helper)))
+    + "\"><div class=\"input-group-addon\">.00</div></div></div><div class=\"form-group\"><label for=\"paymentMethod\">Payment Method</label><select class=\"form-control\" id=\"paymentMethod\"><option>Mastercard</option><option>Visa</option><option>American Express</option></select></div><div class=\"form-group\"><label for=\"creditCardNumber\">Credit Card Number</label><input type=\"text\" class=\"form-control\" id=\"creditCardNumber\" placeholder=\"XXXX-XXXX-XXXX-XXXX\"></div><div class=\"form-group\"><label for=\"dateOfExpiry\">Expires</label><input type=\"text\" class=\"form-control\" id=\"dateOfExpiry\" placeholder=\"MM/YY\"></div><div class=\"form-group\"><label for=\"cvv\">Security code</label><input type=\"text\" class=\"form-control\" id=\"cvv\" value=\""
+    + alias3(((helper = (helper = helpers.cvv || (depth0 != null ? depth0.cvv : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"cvv","hash":{},"data":data}) : helper)))
+    + "\" placeholder=\"XXX - last 3 digits on the back of your card\"></div><div class=\"form-group\"><label for=\"addres\">Address</label><input type=\"text\" class=\"form-control\" id=\"address\" value=\""
+    + alias3(((helper = (helper = helpers.address || (depth0 != null ? depth0.address : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"address","hash":{},"data":data}) : helper)))
+    + "\" placeholder=\"111 Some St, Sunnyvale, CA 94086\"></div><div class=\"form-group\"><label for=\"comments\">Comments</label><textarea class=\"form-control\" rows=\"3\" id=\"comments\" value=\""
+    + alias3(((helper = (helper = helpers.comments || (depth0 != null ? depth0.comments : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"comments","hash":{},"data":data}) : helper)))
+    + "\"></textarea></div><button type=\"button\" class=\"btn btn-primary\" id=\"donation-create-button\">Submit Donation</button></form></div></div></div>";
 },"useData":true});
 
 this["templates"]["galleries"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {

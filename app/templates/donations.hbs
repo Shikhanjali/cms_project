@@ -6,7 +6,7 @@
       <th>Date of Payment</th>
       <th>Amount</th>
       <th>Credit Card</th>
-      <th>Actions</th>
+      <th class="col-md-2">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +16,10 @@
         <td>{{date}}</td>
         <td>{{amount}}</td>
         <td>{{creditCard}}</td>
-        <td><button class="btn btn-danger" id="delete-donation" data-model-id="{{_id}}">Delete</button></td>
+        <td>
+          <button class="btn btn-primary" id="edit-donation" data-model-id="{{_id}}">Edit</button>
+          <button class="btn btn-danger" id="delete-donation" data-model-id="{{_id}}">Delete</button>
+        </td>
       </tr>
     {{/each}}
   </tbody>

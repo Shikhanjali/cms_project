@@ -1,0 +1,27 @@
+#main-content {
+  margin-top: 80px;
+}
+
+@import "libs/animate";
+@import "libs/transition";
+@import "libs/transform";
+
+@include animate-setup(blue-to-red) {
+	from { background-color:blue; };
+	to { background-color:red; };
+};
+
+#donation-create-button {
+	@include animate-me(blue-to-red, 8s);
+}
+
+@include animate-setup(box-rotate) {
+	to {
+		background-color:blue;
+		@include transform("rotate(360deg)", "0px 60px 0");
+	};
+};
+
+#contact-create-button {
+	@include animate-me(box-rotate, 1s, linear);
+}

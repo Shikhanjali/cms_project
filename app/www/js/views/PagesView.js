@@ -1,7 +1,7 @@
 var PagesView = Backbone.View.extend({
-/*
+
 	events: {
-		"click tbody": "showSpecificPage"
+		"click td": "showSpecificPage"
 	},
 
 	showSpecificPage: function(e) {
@@ -10,15 +10,15 @@ var PagesView = Backbone.View.extend({
 		if (e.target instanceof HTMLButtonElement) {
 			console.log($(e.target).attr("data-model-id"));
 			console.log("show specific page fired!");
-			var myPage = new Page({id: $(e.target).attr("data-model-id")});
-			myPage.fetch({
-			success: function() {
-				that.$el.html(templates["add_page"]({ pages: that.collection.toJSON() }))
-			}
-		});
-		}
-	},*/
+			targetModel = this.collection.get($(e.target).attr("data-model-id"));
 
+			var v = new PagesView({
+				el: '#main-content',
+				model: targetModel
+			});
+			v.render();
+			}
+	},
 
 	render: function() {
 		var that = this;
